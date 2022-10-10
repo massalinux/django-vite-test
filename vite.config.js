@@ -17,7 +17,7 @@ export default defineConfig(
         },
       },
       resolve: {
-        extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.json', '.jsx'],
       },
       build: {
         outDir: resolve('./static/dist'),
@@ -27,7 +27,7 @@ export default defineConfig(
         target: 'es2015',
         rollupOptions: {
           input: {
-            main: resolve('./static/src/js/main.jsx'),
+            main: resolve('./static/src/js/main.js'),
           },
           output: {
             chunkFileNames: undefined,
