@@ -1,3 +1,4 @@
 import '../css/style.css';
+import greeting from "./App";
 
-alert('Hello from Django Vite example !');
+greeting('ciao')

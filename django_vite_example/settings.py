@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*5@dv_l9xr#a)7$3qt9#$kj5v2vl0pz2+mc0^^m31ysikmh_uw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,6 +73,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_vite_example.wsgi.application'
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -126,7 +128,7 @@ STATIC_URL = '/static/'
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / "static" / "dist"
 
 # If use HMR or not.
-DJANGO_VITE_DEV_MODE = DEBUG
+#DJANGO_VITE_DEV_MODE = DEBUG
 
 # Name of static files folder (after called python manage.py collectstatic)
 STATIC_ROOT = BASE_DIR / "collectedstatic"
