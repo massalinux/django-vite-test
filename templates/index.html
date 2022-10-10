@@ -10,7 +10,6 @@
 
     {% vite_hmr_client %}
 
-
       <script type="module">
           import RefreshRuntime from 'http://localhost:3000/@react-refresh'
           RefreshRuntime.injectIntoGlobalHook(window)
@@ -26,6 +25,7 @@
 
   <body>
     <h1>Django Vite Example !</h1>
-    <div id="root"></div>
+    {% block inertia %}
+    {% endblock %}
   </body>
 </html>
