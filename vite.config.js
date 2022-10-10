@@ -1,7 +1,8 @@
-const { resolve } = require('path');
+import {resolve} from 'path';
+import reactRefresh from '@vitejs/plugin-react-refresh'
 
 module.exports = {
-  plugins: [],
+  plugins: [reactRefresh()],
   root: resolve('./static/src'),
   base: '/static/',
   server: {
@@ -14,7 +15,7 @@ module.exports = {
     },
   },
   resolve: {
-    extensions: ['.js', '.json'],
+    extensions: ['.js', '.json', '.jsx', '.ts', '.tsx'],
   },
   build: {
     outDir: resolve('./static/dist'),
@@ -24,7 +25,7 @@ module.exports = {
     target: 'es2015',
     rollupOptions: {
       input: {
-        main: resolve('./static/src/js/main.js'),
+        main: resolve('./static/src/js/main.jsx'),
       },
       output: {
         chunkFileNames: undefined,
